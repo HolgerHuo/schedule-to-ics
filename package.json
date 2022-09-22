@@ -1,0 +1,33 @@
+{
+  "name": "schedule-to-ics",
+  "version": "0.0.1",
+  "description": "A utility to convert json based class schedule to ics(iCal) feed/file.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/holgerhuo/schedule-to-ics.git"
+  },
+  "author": "Holger Huo <i@holger.one> (https://holger.one)",
+  "contributors": [
+    "Holger Huo <i@holger.one> (https://holger.one)"
+  ],
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/holgerhuo/schedule-to-ics/issues"
+  },
+  "homepage": "https://mtoolkit.r669.live/sti-ui",
+  "dependencies": {
+    "express": "^4.18.1",
+    "ics": "^2.40.0",
+    "moment": "^2.29.4",
+    "node-fetch-cache": "^3.0.5"
+  },
+  "keywords": [
+    "express",
+    "json",
+    "ics"
+  ]
+}
