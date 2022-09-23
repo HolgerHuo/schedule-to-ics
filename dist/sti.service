@@ -1,0 +1,19 @@
+[Unit]
+Description=schedule-to-ics api server
+
+[Service]
+Environment=NODE_ENV=production 
+Environment=PORT=3000
+ExecStart=/usr/local/bin/node /home/sti/sti/app.js
+WorkingDirectory=/home/sti/sti
+Restart=always
+User=nobody
+Group=nogroup
+LimitNOFILE=infinity
+LimitCORE=infinity
+StandardInput=null
+StandardOutput=syslog
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target
