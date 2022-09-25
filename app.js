@@ -36,7 +36,7 @@ app.get('/favicon.ico', (req, res) => {
 app.use(cors(corsOptions));
 
 // ics endpoint
-app.get('/:school/:grade/:class/schedule.ics',
+app.get('/:school/:grade/:class/*.ics',
     eah(async (req, res) => {
         let data;
         try {
