@@ -23,6 +23,7 @@ const port = process.env.PORT || 3000;
 
 // root handler
 app.get('/', (req, res) => {
+    res.set('Cache-Control', `s-maxage=${process.env.ROOT_S_MAXAGE || '86400'},max-age=${process.env.ROOT_MAX_AGE || '86400'}, stale-while-revalidate`);
     res.send(process.env.ROOT_MSG || "<span style='font-weight: bold'>schedule-to-ics</span> server is now up and running! <br><h3>Usage</h3><br><code>GET</code> /:school/:grade/:class/schedule.ics?sub-class=:subClass&opt1=:opt1<br><br><span style='font-weight: bold'>schedule-to-ics</span> is open-source software and is licensed under AGPL-3.0. You can check out its repo at <a href='https://github.com/HolgerHuo/schedule-to-ics' target='_blank'>https://github.com/HolgerHuo/schedule-to-ics</a>.");
 });
 
@@ -70,6 +71,7 @@ app.use((error, req, res, next) => {
     console.log('Message: ', error.message);
     process.env.NODE_ENV !== 'production' && error.debug && console.log('Debug: ', error.debug);
     res.status(error.status);
+    res.set('Cache-Control', `s-maxage=${process.env.ERROR_S_MAXAGE || '1'},max-age=${process.env.ERROR_MAX_AGE || '1'}, stale-while-revalidate`);
     res.json({
         status: error.status,
         timestamp: dateTime,
