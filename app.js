@@ -50,7 +50,8 @@ app.get('/:school/:grade/:class/schedule.ics',
             throw createError(500, 'The requested iCal could not be generated.', { debug: e });
         }
         res.type('text/calendar');
-        res.append('Update-Date', data.updateDate);
+        res.append('iCal-Modified', data.updateDate);
+        res.append('Cache-Control', `s-maxage=${process.env.S_MAXAGE || '3600'},max-age=${process.env.MAX_AGE || '3600'}, stale-while-revalidate`);
         res.send(calendar);
     })
 );
