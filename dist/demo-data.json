@@ -1,0 +1,511 @@
+{
+	"version": "6",
+	"id": "demo",
+	"updateDate": "2022-09-25T04:46:04.391Z",
+	"active": true,
+	"info": {
+		"school": "demo",
+		"grade": "demo",
+		"year": "2022",
+		"semester": "第一学期",
+        "timezone": "Asia/Shanghai",
+        "maintainer": [
+            {
+                "name": "Holger Huo",
+                "contact": [
+                    {
+                        "dest": "i@holger.one",
+                        "type": "email"
+                    },
+                    {
+                        "dest": "@holgerhuo@dragon-fly.club",
+                        "type": "fediverse"
+                    }
+                ]
+            }
+        ],
+        "url": "https://example/data/school/grade/data.json",
+        "license": "CC BY-NC-SA 4.0",
+        "note": "©️ 2022 CC BY-NC-SA 4.0 Holger Huo",
+        "subClass": true
+	},
+	"timeTable": {
+		"duration": { "hours": 0, "minutes": 40 },
+		"days": {
+            "mon":[[8,0],[8,50],[10,0],[10,50],[11,35],[13,30],[14,20],[15,10]],
+            "tue":[[8,0],[8,50],[10,0],[10,50],[11,35],[13,30],[14,20],[15,10]],
+            "wed":[[8,0],[8,50],[10,0],[10,50],[11,35],[13,30],[14,20],[15,10]],
+            "thu":[[8,0],[8,50],[10,0],[10,50],[11,35],[13,30],[14,20],[15,10]],
+            "fri":[[8,0],[8,50],[10,0],[10,50],[11,35],[13,30],[14,20],[15,10]]
+        },
+		"breakDuration": { "hours": 0, "minutes": 10 },
+		"unmergeableBreaks": [5]
+	},
+	"teachers": {
+        "test": {
+            "id": 19,
+            "displayName": "我",
+            "subject": "生物",
+            "voovId": "xxx xxx xxxx(without hyphens)",
+            "voovPassword": "xxxxxx",
+            "note": [
+                {
+                    "msg": "(无固定会议号)",
+                    "when": [
+                        "online"
+                    ]
+                }
+            ]
+        }
+    },
+	"mappings": {
+		"for": "optionalCourse",
+		"key": "$options[optName]",
+		"opt1": [
+            {
+				"type": "course",
+				"teacher": "xx",
+				"name": "物理1班",
+				"location": "高三1班"
+			},
+            {
+				"type": "course",
+				"teacher": "xx",
+				"name": "物理2班",
+				"location": "高三1班"
+			}
+		]
+	},
+	"classes": {
+        "1": {
+            "id": 1,
+            "info": {
+                "voovId": "xxx xxx xxxx(without hyphens)",
+                "voovPassword": false,
+                "name": "1班"
+            },
+            "mappings": {
+                "for": "classCourse",
+                "key": "$options.subClass",
+                "语文": [
+                    {
+                        "type": "course",
+                        "teacher": "xx"
+                    }
+                ],
+                "数学": [
+                    {
+                        "teacher": "xx"
+                    }
+                ],
+                "外语": [
+                    {
+                        "teacher": "xx"
+                    },
+                    {
+                        "teacher": "xx"
+                    }
+                ],
+                "外教A": [
+                    {
+                        "teacher": "Zack"
+                    },
+                    {
+                        "teacher": "xx"
+                    }
+                ],
+                "外教B": [
+                    {
+                        "teacher": "xx"
+                    },
+                    {
+                        "teacher": "Zack"
+                    }
+                ],
+                "走班1": [
+                    {
+                        "type": "optionalCourse",
+                        "key": "opt1"
+                    }
+                ],
+                "走班2": [
+                    {
+                        "type": "optionalCourse",
+                        "key": "opt2"
+                    }
+                ],
+                "走班3": [
+                    {
+                        "type": "optionalCourse",
+                        "key": "opt3"
+                    }
+                ]
+            },
+            "schedule": [
+                {
+                    "id": 1,
+                    "day": "mon",
+                    "courses": ["数学", "外语", "外语", "体育", "走班3", "语文", "语文", "走班1"]
+                },
+                {
+                    "id": 2,
+                    "day": "tue",
+                    "courses": ["外语", "外语", "走班2", "语文", "语文", "数学", "数学", "班会"]
+                },
+                {
+                    "id": 3,
+                    "day": "wed",
+                    "courses": ["走班3", "走班3", "走班1", "走班1", "走班2", "走班2", "语文", "数学"]
+                },
+                {
+                    "id": 4,
+                    "day": "thu",
+                    "courses": ["走班1", "外语", "外语", "数学", "语文", "体育", "走班2", "走班3"]
+                },
+                {
+                    "id": 5,
+                    "day": "fri",
+                    "courses": ["语文", "数学", "数学", "外教A", "外教B", "走班1", "走班3", "走班2"]
+                }
+            ]
+	    },
+        "2": {
+            "id": 2,
+            "info": {
+                "voovId": "xxx xxx xxxx(without hyphens)",
+                "voovPassword": false,
+                "name": "2班",
+                "note": "外教信息尚不明确"
+            },
+            "mappings": {
+                "for": "classCourse",
+                "key": "$options.subClass",
+                "语文": [
+                    {
+                        "type": "course",
+                        "teacher": "xx"
+                    }
+                ],
+                "数学": [
+                    {
+                        "teacher": "xx"
+                    }
+                ],
+                "外语": [
+                    {
+                        "teacher": "xx"
+                    },
+                    {
+                        "teacher": "xx"
+                    },
+                    {
+                        "teacher": "xx"
+                    },
+                    {
+                        "teacher": "xx"
+                    },
+                    {
+                        "teacher": "xx"
+                    }
+                ],
+                "外教A": [
+                    {
+                        "teacher": "Zack"
+                    },
+                    {
+                        "teacher": ""
+                    }
+                ],
+                "外教B": [
+                    {
+                        "teacher": ""
+                    },
+                    {
+                        "teacher": "Zack"
+                    }
+                ],
+                "走班1": [
+                    {
+                        "type": "optionalCourse",
+                        "key": "opt1"
+                    }
+                ],
+                "走班2": [
+                    {
+                        "type": "optionalCourse",
+                        "key": "opt2"
+                    }
+                ],
+                "走班3": [
+                    {
+                        "type": "optionalCourse",
+                        "key": "opt3"
+                    }
+                ]
+            },
+            "schedule": [
+                {
+                    "id": 1,
+                    "day": "mon",
+                    "courses": ["语文", "语文", "外语", "外语", "走班3", "数学", "数学", "走班1"]
+                },
+                {
+                    "id": 2,
+                    "day": "tue",
+                    "courses": ["外语", "外语", "走班2", "体育", "语文", "数学", "数学", "班会"]
+                },
+                {
+                    "id": 3,
+                    "day": "wed",
+                    "courses": ["走班3", "走班3", "走班1", "走班1", "走班2", "走班2", "语文", "数学"]
+                },
+                {
+                    "id": 4,
+                    "day": "thu",
+                    "courses": ["走班1", "外语", "外语", "体育", "语文", "语文", "走班2", "走班3"]
+                },
+                {
+                    "id": 5,
+                    "day": "fri",
+                    "courses": ["语文", "数学", "数学", "外语", "外语", "走班1", "走班3", "走班2"]
+                }
+            ]
+        }
+    },
+	"extras": [
+        {
+            "id": 1,
+            "fromDate": "09-19-2022",
+            "onlineClass": true,
+            "note": "(第四周)",
+            "mappings": {
+                "type": "extraCourses",
+                "key": "$classId",
+                "grp1": [ "数学", "外语", "语文", "语文", "英语", "数学" ],
+                "grp2": [ "外语", "数学", "外语", "数学", "语文", "语文" ],
+                "grp3": [ "语文", "语文", "数学", "外语", "数学", "外语" ],
+                "grp4": [ "走班1" ],
+                "grp5": [ "走班2" ],
+                "grp6": [ "走班3" ]
+            },
+            "timeTable": {
+                "repeat": {
+                    "times": 1,
+                    "schedulePeriod": 7
+                },
+                "duration": {
+                    "hours": 0,
+                    "minutes": 60
+                },
+                "days": {
+                    "mon": [
+                        [16, 0],
+                        [17, 10]
+                    ],
+                    "tue": [
+                        [16, 0],
+                        [17, 10]
+                    ],
+                    "wed": [
+                        [16, 0],
+                        [17, 10]
+                    ],
+                    "thu": [
+                        [16, 0],
+                        [17, 10]
+                    ],
+                    "fri": [
+                        [16, 0],
+                        [17, 10]
+                    ]
+                },
+                "breakDuration": {
+                    "hours": 0,
+                    "minutes": 10
+                }
+            },
+            "schedule": [
+                {
+                    "id": 1,
+                    "day": "mon",
+                    "courses": ["grp3", "grp4"]
+                },
+                {
+                    "id": 2,
+                    "day": "tue",
+                    "courses": ["grp5", "grp6"]
+                },
+                {
+                    "id": 3,
+                    "day": "wed",
+                    "courses": ["grp2", "grp1"]
+                },
+                {
+                    "id": 4,
+                    "day": "thu",
+                    "courses": ["grp4", "grp3"]
+                },
+                {
+                    "id": 5,
+                    "day": "fri",
+                    "courses": ["grp6", "grp5"]
+                }
+            ],
+            "overwrites": {
+                "teachers": [
+                    {
+                        "id": 1,
+                        "name": "xx",
+                        "subject": "物理",
+                        "skipBreak": false,
+                        "voovId": "just testing"
+                    }
+                ],
+                "mappings": {
+                    "opt1": [
+                        {
+                            "type": "course",
+                            "teacher": "xx",
+                            "name": "试试",
+                            "subject": "空是",
+                            "location": "啊啊"
+                        }
+                    ],
+                    "opt2": [
+                        {
+                            "type": "course",
+                            "teacher": "xx",
+                            "name": "物理1班",
+                            "location": "高三1班"
+                        }
+                    ],
+                    "opt3": [
+                        {
+                            "teacher": "xx",
+                            "name": "生物1班",
+                            "location": "高三1班"
+                        }
+                    ]
+                },
+                "classes": {
+                    "1": {
+                        "id": 1,
+                        "info": {
+                            "voovId": "gggg",
+                            "name": "sdafljl;ksad"
+                        },
+                        "mappings": {
+                            "for": "classCourse",
+                            "key": "$options.subClass",
+                            "语文": [
+                                {
+                                    "type": "course",
+                                    "teacher": "xx"
+                                }
+                            ]
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "id": 2,
+            "fromDate": "09-26-2022",
+            "onlineClass": false,
+            "note": "(第五周)",
+            "mappings": {
+                "type": "extraCourses",
+                "key": "$classId",
+                "grp1": [ "数学", "外语", "语文", "语文", "英语", "数学" ],
+                "grp2": [ "外语", "数学", "外语", "数学", "语文", "语文" ],
+                "grp3": [ "语文", "语文", "数学", "外语", "数学", "外语" ],
+                "grp4": [ "走班1" ],
+                "grp5": [ "走班2" ],
+                "grp6": [ "走班3" ]
+            },
+            "timeTable": {
+                "repeat": {
+                    "times": 1,
+                    "schedulePeriod": 7
+                },
+                "duration": {
+                    "hours": 1,
+                    "minutes": 30
+                },
+                "days": {
+                    "mon": [
+                        [16, 20, {"hours":1,"minutes":0}],
+                        [17, 30]
+                    ],
+                    "tue": [
+                        [16, 20, {"hours":1,"minutes":0}],
+                        [17, 30]
+                    ],
+                    "wed": [
+                        [16, 20, {"hours":1,"minutes":0}],
+                        [17, 30]
+                    ],
+                    "thu": [
+                        [16, 20, {"hours":1,"minutes":0}],
+                        [17, 30]
+                    ],
+                    "fri": [
+                        [16, 20, {"hours":1,"minutes":0}],
+                        [17, 30]
+                    ],
+                    "sat": [
+                        [8,30],
+                        [10,15],
+                        [13,30],
+                        [14,45]
+                    ]
+                },
+                "breakDuration": {
+                    "hours": 0,
+                    "minutes": 10
+                }
+            },
+            "schedule": [
+                {
+                    "id": 1,
+                    "day": "mon",
+                    "courses": ["统练(不明)", "加课(不明)"]
+                },
+                {
+                    "id": 2,
+                    "day": "tue",
+                    "courses": ["统练(不明)", "加课(不明)"]
+                },
+                {
+                    "id": 3,
+                    "day": "wed",
+                    "courses": ["统练(不明)", "加课(不明)"]
+                },
+                {
+                    "id": 4,
+                    "day": "thu",
+                    "courses": ["统练(不明)", "加课(不明)"]
+                },
+                {
+                    "id": 5,
+                    "day": "fri",
+                    "courses": ["统练(不明)", "加课(不明)"]
+                }
+            ]
+        }
+    ],
+	"categories": [
+        {
+			"name": "主科",
+			"subjects": ["语文", "数学", "英语", "西语", "日语", "德语", "法语", "日语"]
+		},
+		{
+			"name": "六选三",
+			"subjects": ["物理", "化学", "地理", "历史", "生物", "政治"]
+		},
+		{
+			"name": "没用的",
+			"subjects": ["体育", "班会", "外教"]
+		}
+	]
+}
