@@ -52,6 +52,7 @@ app.get('/:school/:grade/:class/schedule.ics',
         }
         res.type('text/calendar');
         res.append('iCal-Modified', data.updateDate);
+        data.info.license && res.append('iCal-License', data.info.license);
         res.append('Cache-Control', `s-maxage=${process.env.S_MAXAGE || '3600'},max-age=${process.env.MAX_AGE || '3600'}, stale-while-revalidate`);
         res.send(calendar);
     })
